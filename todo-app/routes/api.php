@@ -35,7 +35,7 @@ Route::put('/tasks/{id}', function (Request $request, $id) {
     return $task;
 });
 
-Route::delete('/tasks/${id}',function($id){
+Route::delete('/tasks/{id}',function($id){
     $task = Task::find($id);
     if(!$task) return response()->json(['error'=>'Not found'], 404);
     $task->delete();
